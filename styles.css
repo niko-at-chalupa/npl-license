@@ -1,12 +1,25 @@
-#top-bar {
-    height: auto;
-    width: 100%;
-    background-color: #1d2024;
+* {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
-    padding: 16px 24px;
+    padding: 0;
+    background-color: #0f1419;
+    color: #e0e0e0;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+}
+
+#top-bar {
+    width: 100%;
+    height: 44px;
+    background-color: #1a1f26;
+    margin: 0;
+    padding: 16px 48px;
     display: flex;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 #top-bar ul {
@@ -15,6 +28,7 @@
     padding: 0;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -24,19 +38,98 @@
     align-items: center;
 }
 
-#top-bar li h1 {
-    color: white;
+#top-bar li.logo h1 {
+    color: #ddb9f8;
     margin: 0;
     padding: 0;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 20px;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
-body {
-    margin: 0;
+#top-bar li.nav-links {
+    gap: 32px;
+}
+
+#top-bar li.nav-links a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+#top-bar li.nav-links a:hover {
+    color: #ddb9f8;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 48px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+section h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    color: #ffffff;
+}
+
+section p {
+    color: #c0c0c0;
+    margin: 0 0 16px 0;
+    font-size: 16px;
+}
+
+section p a {
+    color: #6366f1;
+    text-decoration: none;
+}
+
+section p a:hover {
+    text-decoration: underline;
+}
+
+code {
+    background-color: #1a1f26;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: "Fira Code", monospace;
+    font-size: 14px;
+    color: #a0d8ff;
+}
+
+pre {
+    background-color: #1a1f26;
+    border: 1px solid #2a3a4a;
+    border-radius: 6px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+pre code {
+    background: none;
     padding: 0;
-    background-color: #111318;
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    border-radius: 0;
+    color: #c0c0c0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+#derivative {
+    border-top: 1px solid #2a3a4a;
+    padding-top: 40px;
+    margin-top: 80px;
+}
+
+.derivative-notice {
+    color: #a0a0a0;
+    font-size: 14px;
+    text-align: center;
 }
