@@ -1,4 +1,4 @@
-# Niko's Persistent License (NPL) V1.2
+# Niko's Persistent License (NPL) V1.3
 
 ## In this license, "NPL" refers to this license, Niko's Persistent License.
 
@@ -7,7 +7,7 @@ This is free and unencumbered software released under the following terms.
 Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means, subject to the following condition:
 
 ## Persistence of NPL
-This software *must* remain under this license (NPL). Relicensing to a non-NPL license or removing the license file from source distributions is prohibited. This only applies to the distribution of source code, therefore binaries and downstream software do not need to comply with NPL's condition.
+This software *must* remain under this license (NPL). Relicensing to a non-NPL license or removing the license file from source distributions is prohibited. This only applies to the distribution of source code, therefore binaries and downstream software do not need to comply with NPL's condition. This does not apply to later official versions of NPL; you may relicense to any newer official version of NPL.
 
 ## No Other Requirements
 The sole requirement is persistence.
