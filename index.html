@@ -17,6 +17,7 @@
                 <a href="#what">What</a>
                 <a href="#why">Why</a>
                 <a href="#how">How</a>
+                <a href="#comparison">Compare</a>
             </li>
         </ul>
     </div>
@@ -26,11 +27,59 @@
             <h2>What is NPL?</h2>
             <p>Niko's Persistent License (NPL) is a simple license that allows you to do whatever you want with software, with one condition: it must stay under the NPL license.</p>
             <p>I drew inspiration from <a href="https://unlicense.org">Unlicense</a>, and use it in <em>almost</em> all of my personal projects.</p>
+        </section>
 
         <section id="why">
             <h2>Why Use NPL?</h2>
             <p>I like the idea of permissive licenses, but I don't like how pretty much all of then allow for that permissiveness to be stripped away by changing or removing the license.</p>
             <p>NPL provides that same level of freedom but requires the license to remain NPL.</p>
+        </section>
+
+        <section id="comparison">
+            <h2>NPL vs GPL</h2>
+            <p>NPL can *sound* like GPL, but it's different--I promise!</p>
+            <p>tl;dr: it's that GPL requires *every* derivative to be GPL as well; if you use a GPL library and you distribute your code--you have to be GPL as well! NPL only requires distributed source code to be NPL. Binaries, downstream software, and whatnot aren't affected.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Characteristic</th>
+                        <th>NPL</th>
+                        <th>GPL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>License type</td>
+                        <td>Permissive with a persistence requirement that *only* applies to source</td>
+                        <td>Strong copyleft, all downstream software are affected as well</td>
+                    </tr>
+                    <tr>
+                        <td>Redistribution</td>
+                        <td>Allowed for any purpose if NPL remains attached to *source* distributions; binaries and proprietary software don't need NPL attached to them</td>
+                        <td>Allowed if derivative works are also distributed under GPL</td>
+                    </tr>
+                    <tr>
+                        <td>Modification</td>
+                        <td>Allowed freely, but modified *source* must keep NPL when distributed (i.e., binaries and downstream software don't need to keep NPL)</td>
+                        <td>Allowed freely, but derivatives must be GPL when distributed</td>
+                    </tr>
+                    <tr>
+                        <td>Binary/distribution requirement</td>
+                        <td>Binaries do not need to comply with the persistence condition</td>
+                        <td>Binaries must provide source or an offer for source under GPL terms</td>
+                    </tr>
+                    <tr>
+                        <td>Downstream software</td>
+                        <td>Any distinct software that incorperates NPL (i.e., software that uses NPL software as a library) do not need to be licensed under NPL</td>
+                        <td>Any software that incorperates GPL licenced software must be licensed as GPL as well</td>
+                    </tr>
+                    <tr>
+                        <td>Primary goal</td>
+                        <td>Keep source code free while preserving the license</td>
+                        <td>Ensure downstream freedom by enforcing GPL on derivatives</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <section id="how">

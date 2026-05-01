@@ -95,6 +95,33 @@ section p a:hover {
     text-decoration: underline;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 15px;
+}
+
+th,
+td {
+    border: 1px solid #2a3a4a;
+    padding: 14px 16px;
+    text-align: left;
+}
+
+th {
+    background-color: #161b22;
+    color: #f0f0f0;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #14191f;
+}
+
+tbody tr:hover {
+    background-color: #1f2937;
+}
+
 code {
     background-color: #1a1f26;
     padding: 2px 6px;
