@@ -49,7 +49,8 @@ html, body {
 
 .generic-window-window {
   position: absolute;
-  background: var(--generic-window-bg);
+  background: rgba(17, 11, 31, 0.5); /* Adjusted transparency for blur effect */
+  backdrop-filter: blur(10px); /* Apply blur effect */
   border: 2px solid var(--inactive-border);
   border-radius: var(--hypr-rounding);
   overflow: hidden;
@@ -183,28 +184,29 @@ pre code {
   background: #bfadea;
 }
 
+.license-copy-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; /* Center items horizontally */
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
 .copy-license-button {
   border: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background: var(--generic-window-accent); /* Using the accent color */
+  color: #ffffff; /* White text */
   border-radius: 999px;
   padding: 10px 18px;
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  margin-top: 12px;
+  margin-top: 0; /* Removed top margin as justify-content handles spacing */
 }
 
 .copy-license-button:hover {
-  background: rgba(255, 255, 255, 0.16);
-}
-
-.license-copy-controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  background: #bfadea; /* Hover color consistent with viewport-toggle */
 }
 
 .page-footer {
