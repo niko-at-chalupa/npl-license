@@ -7,87 +7,100 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Root workspace container modeled after niko-at-chalupa's page design -->
-    <div id="workspace" class="tiling-workspace">
-        <div class="generic-window-window window-entry" id="win-main">
-            <main class="generic-window-editor">
-                <div class="code-area">
-                    <div id="top-bar">
-                        <ul>
-                            <li class="logo"><h1>NPL</h1></li>
-                            <li class="nav-links">
-                                <a href="#what">What</a>
-                                <a href="#why">Why</a>
-                                <a href="#how">How</a>
-                                <a href="#comparison">Compare</a>
-                            </li>
-                        </ul>
+    <div class="workspace-shell">
+        <div id="workspace-top" class="tiling-workspace">
+            <div class="generic-window-window window-entry" id="win-what">
+                <main class="generic-window-editor">
+                    <div class="window-title">What is NPL?</div>
+                    <div class="code-area">
+                        <p>Niko's Persistent License (NPL) is a simple license that allows you to do whatever you want with software, with one condition: it must stay under the NPL license.</p>
+                        <p>I drew inspiration from <a href="https://unlicense.org">Unlicense</a>, and use it in <em>almost</em> all of my personal projects.</p>
                     </div>
+                </main>
+            </div>
 
-                    <div class="container">
-                        <section id="what">
-                            <h2>What is NPL?</h2>
-                            <p>Niko's Persistent License (NPL) is a simple license that allows you to do whatever you want with software, with one condition: it must stay under the NPL license.</p>
-                            <p>I drew inspiration from <a href="https://unlicense.org">Unlicense</a>, and use it in <em>almost</em> all of my personal projects.</p>
-                        </section>
+            <div class="generic-window-window window-entry" id="win-why">
+                <main class="generic-window-editor">
+                    <div class="window-title">Why Use NPL?</div>
+                    <div class="code-area">
+                        <p>I like the idea of permissive licenses, but I don't like how pretty much all of them allow for that permissiveness to be stripped away by changing or removing the license.</p>
+                        <p>NPL provides that same level of freedom but requires the license to remain NPL.</p>
+                    </div>
+                </main>
+            </div>
 
-                        <section id="why">
-                            <h2>Why Use NPL?</h2>
-                            <p>I like the idea of permissive licenses, but I don't like how pretty much all of them allow for that permissiveness to be stripped away by changing or removing the license.</p>
-                            <p>NPL provides that same level of freedom but requires the license to remain NPL.</p>
-                        </section>
+            <div class="generic-window-window window-entry" id="win-more">
+                <main class="generic-window-editor">
+                    <div class="window-title">More windows</div>
+                    <div class="code-area">
+                        <p>More sections are hidden in the secondary viewport below.</p>
+                        <button class="viewport-toggle" data-target="workspace-bottom">Read more</button>
+                    </div>
+                </main>
+            </div>
+        </div>
 
-                        <section id="comparison">
-                            <h2>NPL vs GPL</h2>
-                            <p>NPL can *sound* like GPL, but it's different--I promise!</p>
-                            <p>tl;dr: it's that GPL requires *every* derivative to be GPL as well; if you use a GPL library and you distribute your code--you have to be GPL as well! NPL only requires distributed source code to be NPL. Binaries, downstream software, and whatnot aren't affected.</p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>Characteristic</th>
-                                        <th>NPL</th>
-                                        <th>GPL</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>License type</td>
-                                        <td>Permissive with a persistence requirement that *only* applies to source</td>
-                                        <td>Strong copyleft, all downstream software are affected as well</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Redistribution</td>
-                                        <td>Allowed for any purpose if NPL remains attached to *source* distributions; binaries and proprietary software don't need NPL attached to them</td>
-                                        <td>Allowed if derivative works are also distributed under GPL</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Modification</td>
-                                        <td>Allowed freely, but modified *source* must keep NPL when distributed (i.e., binaries and downstream software don't need to keep NPL)</td>
-                                        <td>Allowed freely, but derivatives must be GPL when distributed</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Binary/distribution requirement</td>
-                                        <td>Binaries do not need to comply with the persistence condition</td>
-                                        <td>Binaries must provide source or an offer for source under GPL terms</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Downstream software</td>
-                                        <td>Any distinct software that incorporates NPL (i.e., software that uses NPL software as a library) do not need to be licensed under NPL</td>
-                                        <td>Any software that incorporates GPL licensed software must be licensed as GPL as well</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Primary goal</td>
-                                        <td>Keep source code free while preserving the license</td>
-                                        <td>Ensure downstream freedom by enforcing GPL on derivatives</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
+        <div id="workspace-bottom" class="tiling-workspace">
+            <div class="generic-window-window window-entry" id="win-comparison">
+                <main class="generic-window-editor">
+                    <div class="window-title">NPL vs GPL</div>
+                    <div class="code-area">
+                        <p>NPL can *sound* like GPL, but it's different--I promise!</p>
+                        <p>tl;dr: it's that GPL requires *every* derivative to be GPL as well; if you use a GPL library and you distribute your code--you have to be GPL as well! NPL only requires distributed source code to be NPL. Binaries, downstream software, and whatnot aren't affected.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Characteristic</th>
+                                    <th>NPL</th>
+                                    <th>GPL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>License type</td>
+                                    <td>Permissive with a persistence requirement that *only* applies to source</td>
+                                    <td>Strong copyleft, all downstream software are affected as well</td>
+                                </tr>
+                                <tr>
+                                    <td>Redistribution</td>
+                                    <td>Allowed for any purpose if NPL remains attached to *source* distributions; binaries and proprietary software don't need NPL attached to them</td>
+                                    <td>Allowed if derivative works are also distributed under GPL</td>
+                                </tr>
+                                <tr>
+                                    <td>Modification</td>
+                                    <td>Allowed freely, but modified *source* must keep NPL when distributed (i.e., binaries and downstream software don't need to keep NPL)</td>
+                                    <td>Allowed freely, but derivatives must be GPL when distributed</td>
+                                </tr>
+                                <tr>
+                                    <td>Binary/distribution requirement</td>
+                                    <td>Binaries do not need to comply with the persistence condition</td>
+                                    <td>Binaries must provide source or an offer for source under GPL terms</td>
+                                </tr>
+                                <tr>
+                                    <td>Downstream software</td>
+                                    <td>Any distinct software that incorporates NPL (i.e., software that uses NPL software as a library) do not need to be licensed under NPL</td>
+                                    <td>Any software that incorporates GPL licensed software must be licensed as GPL as well</td>
+                                </tr>
+                                <tr>
+                                    <td>Primary goal</td>
+                                    <td>Keep source code free while preserving the license</td>
+                                    <td>Ensure downstream freedom by enforcing GPL on derivatives</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </main>
+            </div>
 
-                        <section id="how">
-                            <h2>The NPL</h2>
+            <div class="generic-window-window window-entry" id="win-how">
+                <main class="generic-window-editor">
+                    <div class="window-title">The NPL</div>
+                    <div class="code-area">
+                        <div class="license-copy-controls">
                             <p>Use this license in a file named <code>LICENSE</code> in your project:</p>
-                            <pre><code># Niko's Persistent License (NPL) V1.4
+                            <button class="copy-license-button" data-copy-target="license-code">Copy license</button>
+                        </div>
+                        <pre><code id="license-code"># Niko's Persistent License (NPL) V1.4
 
 ## In this license, "NPL" refers to this license, Niko's Persistent License.
 
@@ -113,20 +126,27 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 For more information, please refer to &lt;https://niko-at-chalupa.github.io/npl-license/&gt;</code></pre>
-                            <p>If you'd like, you may remove the last line linking to this website. That is the only allowed modification to official versions of the license.</p>
-                        </section>
-
-                        <section id="derivative">
-                            <p class="derivative-notice"><strong>Note:</strong> This license and website are derivative of <a href="https://unlicense.org">Unlicense</a>, adapted with the additional requirement of license persistence.</p>
-                        </section>
+                        <p>If you'd like, you may remove the last line linking to this website. That is the only allowed modification to official versions of the license.</p>
                     </div>
-                </div>
-            </main>
+                </main>
+            </div>
+
+            <div class="generic-window-window window-entry" id="win-back">
+                <main class="generic-window-editor">
+                    <div class="window-title">Jump back</div>
+                    <div class="code-area">
+                        <p>Return to the first viewport to keep reading the introduction.</p>
+                        <button class="viewport-toggle" data-target="workspace-top">Back to top</button>
+                    </div>
+                </main>
+            </div>
         </div>
     </div>
 
-    <div class="content-below">
-        <!-- Placeholder for additional content if the design evolves further -->
-    </div>
+    <footer class="page-footer">
+        <p class="derivative-notice"><strong>Note:</strong> This license and website are derivative of <a href="https://unlicense.org">Unlicense</a>, adapted with the additional requirement of license persistence.</p>
+    </footer>
+
+    <script src="js/tiling.js"></script>
 </body>
 </html>

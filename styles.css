@@ -1,28 +1,18 @@
 /*
   Main page styling for the NPL license website.
   This file includes the design language copied from the niko-at-chalupa design directory,
-  with root page-specific layout rules preserved for the license content.
+  with dual viewports and draggable windows.
 */
 
 html, body {
+  height: 100%;
   background-color: #151217;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   color: #e0e0e0;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
-  min-height: 100%;
-
-  /* Hide scrollbar for Firefox */
-  scrollbar-width: none;
-  /* Hide scrollbar for IE, Edge and Firefox */
-  -ms-overflow-style: none;
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;
 }
 
 :root {
@@ -36,18 +26,29 @@ body::-webkit-scrollbar {
   --generic-window-accent: #ae84cf;
 }
 
-/* Root workspace container for the licence page layout */
+.workspace-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .tiling-workspace {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   position: relative;
   box-sizing: border-box;
   padding: var(--hypr-gaps);
-  overflow: auto;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.tiling-workspace.hidden {
+  display: block;
 }
 
 .generic-window-window {
-  position: relative;
+  position: absolute;
   background: var(--generic-window-bg);
   border: 2px solid var(--inactive-border);
   border-radius: var(--hypr-rounding);
@@ -56,125 +57,74 @@ body::-webkit-scrollbar {
   flex-direction: column;
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   box-sizing: border-box;
-  transition: border-color 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-              box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  max-width: 1100px;
-  margin: 0 auto;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: grab;
 }
 
-.generic-window-window:hover {
+.generic-window-window:hover,
+.generic-window-window.dragging {
   border-color: var(--generic-window-accent);
+}
+
+.generic-window-window.dragging {
+  z-index: 100;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  cursor: grabbing;
 }
 
 .generic-window-editor {
   display: flex;
-  padding: 20px;
-  line-height: 1.6;
-  width: 100%;
+  flex-direction: column;
+  padding: 18px;
+  height: 100%;
+  overflow: auto;
+}
+
+.window-title {
+  color: var(--generic-window-accent);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  text-align: center;
 }
 
 .code-area {
   flex-grow: 1;
-  font-size: 14px;
+  min-height: 0;
   color: var(--generic-window-text);
 }
 
-#top-bar {
-  width: 100%;
-  background-color: rgba(26, 31, 38, 0.95);
-  margin: 0 0 20px 0;
-  padding: 16px 24px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  border-radius: calc(var(--hypr-rounding) - 2px);
-}
-
-#top-bar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-}
-
-#top-bar li {
-  list-style: none;
-  display: flex;
-  align-items: center;
-}
-
-#top-bar li.logo h1 {
-  color: var(--generic-window-accent);
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-#top-bar li.nav-links {
-  display: flex;
-  gap: 28px;
-}
-
-#top-bar li.nav-links a {
-  color: #a0a0a0;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-#top-bar li.nav-links a:hover {
-  color: var(--generic-window-accent);
-}
-
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 12px 24px;
-}
-
-section {
-  margin-bottom: 60px;
-}
-
-section h2 {
-  font-size: 28px;
-  font-weight: 600;
-  margin: 0 0 20px 0;
+h2 {
+  font-size: 22px;
+  margin: 0 0 14px 0;
   color: #ffffff;
 }
 
-section p {
+p {
   color: #c0c0c0;
   margin: 0 0 16px 0;
-  font-size: 16px;
+  font-size: 15px;
 }
 
-section p a {
+p a {
   color: #8b9cff;
-  text-decoration: none;
 }
 
-section p a:hover {
+p a:hover {
   text-decoration: underline;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 16px;
-  font-size: 15px;
+  margin: 16px 0 0;
+  font-size: 14px;
 }
 
 th,
 td {
   border: 1px solid #2a3a4a;
-  padding: 14px 16px;
+  padding: 12px 14px;
   text-align: left;
 }
 
@@ -206,7 +156,7 @@ pre {
   border-radius: 6px;
   padding: 16px;
   overflow-x: auto;
-  margin: 20px 0;
+  margin: 16px 0;
 }
 
 pre code {
@@ -218,53 +168,52 @@ pre code {
   line-height: 1.4;
 }
 
-#derivative {
-  border-top: 1px solid #2a3a4a;
-  padding-top: 40px;
-  margin-top: 80px;
+.viewport-toggle {
+  border: none;
+  background: var(--generic-window-accent);
+  color: #0f1419;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.viewport-toggle:hover {
+  background: #bfadea;
+}
+
+.copy-license-button {
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.copy-license-button:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.license-copy-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.page-footer {
+  padding: 8px 12px;
+  text-align: center;
+  color: #a0a0a0;
+  font-size: 0.9rem;
 }
 
 .derivative-notice {
-  color: #a0a0a0;
-  font-size: 14px;
-  text-align: center;
-}
-
-.content-below {
-  min-height: 200px;
-  padding: 40px;
-  color: white;
-}
-
-.attribution-footer {
-  margin-top: 10px;
-  font-size: 10px;
-  color: rgba(205, 214, 244, 0.5);
-  text-align: center;
-}
-
-.attribution-footer a {
-  color: var(--generic-window-accent);
-  text-decoration: none;
-  position: relative;
-}
-
-.attribution-footer a:hover {
-  text-decoration: underline;
-}
-
-.code-area a,
-.attribution-footer a {
-  position: relative;
-}
-
-.code-area a::before,
-.attribution-footer a::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  bottom: -10px;
-  left: -10px;
-  right: -10px;
-  background: transparent;
+  margin: 0;
 }
