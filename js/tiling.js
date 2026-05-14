@@ -184,6 +184,7 @@ function animate() {
 
 windowStates.forEach(state => {
     state.el.addEventListener('mousedown', (e) => {
+
         if (e.target.closest('a, button, input, textarea, select')) return;
         const stateToStart = state;
         draggedState = stateToStart;

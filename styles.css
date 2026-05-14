@@ -1,3 +1,4 @@
+
 /*
   Main page styling for the NPL license website.
   This file includes the design language copied from the niko-at-chalupa design directory,
@@ -218,4 +219,20 @@ pre code {
 
 .derivative-notice {
   margin: 0;
+}
+
+/* Prevent text selection while dragging windows */
+.generic-window-window {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE 10+ */
+  user-select: none;         /* Standard syntax */
+}
+
+/* Ensure no text selection when window is actively being dragged */
+.generic-window-window.dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
