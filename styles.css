@@ -197,7 +197,7 @@ pre code {
 .copy-license-button {
   border: none;
   background: var(--generic-window-accent); /* Using the accent color */
-  color: #ffffff; /* White text */
+  color: #0f1419; /* White text */
   border-radius: 999px;
   padding: 10px 18px;
   font-size: 14px;
