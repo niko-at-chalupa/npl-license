@@ -14,8 +14,6 @@ This software *must* remain under this license (NPL). Relicensing to a non-NPL l
 
 Note that "downstream software" refers to distinct software that uses NPL software (i.e., downstream software is defined here as software that merely interacts with NPL software through standard APIs, CLI arguments, or configuration files)
 
-Re-implementation is only 'distinct software' if it involves original creative effort. AI-generated rewrites that preserve the functional structure of this software, or simple refactors remain subject to the persistence requirement.
-
 ## No Other Requirements
 The sole requirement is persistence.
 
