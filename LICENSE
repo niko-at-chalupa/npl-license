@@ -10,7 +10,7 @@ This is free and unencumbered software released under the following terms.
 Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means, subject to the following condition:
 
 ## Persistence of NPL
-This software *must* remain under this license (NPL). Relicensing to a non-NPL license or removing the license file from source distributions is prohibited. This only applies to the distribution of source code, therefore binaries and downstream software do not need to comply with NPL's condition. This does not apply to later official versions of NPL; you may relicense to any newer official version of NPL as long as it is not a beta one.
+This software *must* remain under this license (NPL). Relicensing to a non-NPL license or removing the license file from source distributions is prohibited. This only applies to the distribution of source code, therefore binaries and downstream software do not need to comply with NPL's condition. This does not apply to later official versions of NPL; you may relicense to any newer version of NPL from the [main branch of our GitHub repository](https://github.com/niko-at-chalupa/npl-license).
 
 Note that "downstream software" refers to distinct software that uses NPL software (i.e., downstream software is defined here as software that merely interacts with NPL software through standard APIs, CLI arguments, or configuration files)
 
